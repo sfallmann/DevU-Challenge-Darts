@@ -14,6 +14,11 @@ namespace ChallengeDarts
         private int _score;
         private bool _initialized = false;
 
+        public int Score
+        {
+            get { return this._score;  }
+        }
+
         enum Bands
         {
             None,
@@ -21,7 +26,7 @@ namespace ChallengeDarts
             Outer
         }
 
-
+        
         public Dart(Random random)
         {
             
@@ -51,18 +56,5 @@ namespace ChallengeDarts
             return this._band == Bands.Inner ? "Inner" : this._band == Bands.Outer ? "Outer" : "None";
         }
 
-        public int Score()
-        {
-
-            if (!this._initialized)
-            {
-                throw new Exception("Dart Throw method must be invoked at least once before Score can be called");
-            }
-
-            if (this._score == 0)
-                return this._band == Bands.Inner ? 50 : 25;
-
-            return this._band == Bands.Inner ? this._score * 3 : this._band == Bands.Outer ? this._score * 2 : this._score;
-        }
     }
 }

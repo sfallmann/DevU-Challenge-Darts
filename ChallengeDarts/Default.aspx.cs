@@ -10,10 +10,11 @@ namespace ChallengeDarts
 {
     public partial class Default : System.Web.UI.Page
     {
+        Random random = new Random();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-      
+
         }
     }
 }
