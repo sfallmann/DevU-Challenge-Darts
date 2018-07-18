@@ -19,7 +19,12 @@ namespace ChallengeDarts
             get { return this._score;  }
         }
 
-        enum Bands
+        public Bands Band
+        {
+            get { return this._band; }
+        }
+
+        public enum Bands
         {
             None,
             Inner,
@@ -44,16 +49,6 @@ namespace ChallengeDarts
             else
                 this._band = multiplierChance < 6 ? Bands.Inner : multiplierChance > 95 ? Bands.Outer : Bands.None;
 
-        }
-
-        public string Band()
-        {
-            if (!this._initialized)
-            {
-                throw new Exception("Dart Throw method must be invoked at least once before Band call be called");
-            }
-
-            return this._band == Bands.Inner ? "Inner" : this._band == Bands.Outer ? "Outer" : "None";
         }
 
     }
