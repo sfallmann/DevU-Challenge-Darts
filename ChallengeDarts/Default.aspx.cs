@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChallengeDarts.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,11 +11,13 @@ namespace ChallengeDarts
 {
     public partial class Default : System.Web.UI.Page
     {
-        Random random = new Random();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Game game = new Game();
 
+            resultsLabel.Text = game.Play();
         }
     }
 }
